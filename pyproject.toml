@@ -1,0 +1,33 @@
+[project]
+name = "voxify"
+version = "0.1.0"
+description = "Post Analysis"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "scikit-learn>=1.7.2", 
+    "seaborn>=0.13.2", 
+    "numpy>=2.2.6", 
+    "matplotlib>=3.10.7", 
+    "pandas>=2.3.3"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=9.0.1",]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # Pyflakes
+    "I", # isort
+    "UP", # pyupgrade
+]
+
+ignore = [
+    "E501", # line-too-long
+]
